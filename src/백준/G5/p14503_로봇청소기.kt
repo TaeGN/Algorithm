@@ -1,4 +1,4 @@
-package 백준.G5.p14503_로봇청소기
+package 백준.G5
 
 import java.io.BufferedReader
 import java.io.InputStreamReader

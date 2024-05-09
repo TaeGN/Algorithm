@@ -1,4 +1,4 @@
-package 백준.G4.p16234_인구이동
+package 백준.G4
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -27,7 +27,7 @@ fun main() = with(BufferedReader(InputStreamReader(System.`in`))) {
     }
 
     visited = Array(mapSize) { BooleanArray(mapSize) { false } }
-    var count = -1;
+    var count = -1
     do {
 //        visited 배열 초기화
         for(rowArray in visited) {
