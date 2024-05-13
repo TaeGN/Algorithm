@@ -1,4 +1,4 @@
-package test
+package Kotlin
 
 val String.lastChar: Char
     get() = get(length - 1)

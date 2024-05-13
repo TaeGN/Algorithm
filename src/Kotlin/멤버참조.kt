@@ -1,6 +1,4 @@
-package test
-
-import kotlin.reflect.KProperty0
+package Kotlin
 
 data class Person(val name: String, val age: Int) {
     fun info() = "${name}님의 나이는 ${age}입니다."

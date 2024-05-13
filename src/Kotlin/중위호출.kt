@@ -1,4 +1,4 @@
-package test
+package Kotlin
 
 
 infix fun Any.to(other: Any) = Pair(this, other)

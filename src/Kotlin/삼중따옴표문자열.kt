@@ -1,4 +1,4 @@
-package test
+package Kotlin
 
 fun main() {
     val msg = """

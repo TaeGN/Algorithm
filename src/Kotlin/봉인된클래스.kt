@@ -1,4 +1,4 @@
-package test
+package Kotlin
 
 sealed class Expr {
     class Num(val value: Int): Expr()
