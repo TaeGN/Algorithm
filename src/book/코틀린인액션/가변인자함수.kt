@@ -1,4 +1,4 @@
-package kotlin.코틀린인액션
+package book.코틀린인액션
 
 fun main() {
     val array = Array(3) { 0 }

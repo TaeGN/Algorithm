@@ -1,4 +1,4 @@
-package kotlin.코틀린인액션
+package book.코틀린인액션
 
 class CountingSet<T>(val innerSet: MutableCollection<T> = HashSet()): MutableCollection<T> by innerSet {
     var addCount = 0

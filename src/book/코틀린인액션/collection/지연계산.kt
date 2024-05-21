@@ -1,4 +1,4 @@
-package kotlin.코틀린인액션.collection
+package book.코틀린인액션.collection
 
 fun main() {
     val list = listOf(1, 2, 3, 4)

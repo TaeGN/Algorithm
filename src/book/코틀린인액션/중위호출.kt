@@ -1,4 +1,4 @@
-package kotlin.코틀린인액션
+package book.코틀린인액션
 
 
 infix fun Any.to(other: Any) = Pair(this, other)

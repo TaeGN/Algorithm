@@ -1,4 +1,4 @@
-package kotlin.코틀린인액션
+package book.코틀린인액션
 
 data class Point(val x: Int, val y: Int) {
     operator fun plus(other: Point): Point {

@@ -1,4 +1,4 @@
-package kotlin.코틀린인액션
+package book.코틀린인액션
 
 data class User(val id: Long, val name: String, val address: String)
 
