@@ -1,4 +1,4 @@
-package Kotlin
+package kotlin.코틀린인액션
 
 val String.lastChar: Char
     get() = get(length - 1)

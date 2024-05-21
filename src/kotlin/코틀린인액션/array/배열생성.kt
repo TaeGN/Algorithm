@@ -1,4 +1,4 @@
-package Kotlin.array
+package kotlin.코틀린인액션.array
 
 fun main() {
     val letters = Array(26) { ('A' + it).toString() }

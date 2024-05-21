@@ -1,4 +1,4 @@
-package Kotlin
+package kotlin.코틀린인액션
 
 fun String.lastChar(): Char = this.get(this.length - 1)
 

@@ -1,4 +1,4 @@
-package Kotlin.collection
+package kotlin.코틀린인액션.collection
 
 fun main() {
     val strings = listOf("a","b","c")
