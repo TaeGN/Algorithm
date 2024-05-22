@@ -13,9 +13,9 @@ data class ParkingSpace(val hourlyParkingFee: Int) {
     }
 
     fun out(): Int {
-        val weight = car?.weight ?: throw Exception("주차된 차량 없음")
-        this.car = null
-        return weight * hourlyParkingFee
+        val fee = car?.let { it.weight * hourlyParkingFee } ?: throw Exception("주차된 차량 없음")
+        car = null
+        return fee
     }
 
     fun isMatch(car: Car) = this.car?.carId == car.carId
@@ -32,16 +32,16 @@ fun main() = with(BufferedReader(InputStreamReader(System.`in`))) {
     val queue = ArrayDeque<Car>()
 
     var totalPrice = 0
-    for(i in 1..(2 * m)) {
+    for (i in 1..(2 * m)) {
         val input = readLine().toInt()
         val car = cars[abs(input) - 1]
         val isIn = input > 0
-        if(isIn) {
+        if (isIn) {
             parkingSpaces.find(ParkingSpace::isEmpty)?.parking(car) ?: queue.add(car)
         } else {
-            val parkingSpace = parkingSpaces.find {it.isMatch(car)} ?: throw Exception()
+            val parkingSpace = parkingSpaces.find { it.isMatch(car) } ?: throw Exception()
             totalPrice += parkingSpace.out()
-            if(queue.isNotEmpty()) parkingSpace.parking(queue.removeFirst())
+            if (queue.isNotEmpty()) parkingSpace.parking(queue.removeFirst())
         }
     }
     close()
