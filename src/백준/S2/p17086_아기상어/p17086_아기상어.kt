@@ -1,4 +1,4 @@
-package 백준.S2
+package 백준.S2.p17086_아기상어
 
 import java.io.BufferedReader
 import java.io.InputStreamReader

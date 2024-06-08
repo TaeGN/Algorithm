@@ -1,4 +1,4 @@
-package 백준.S2
+package 백준.S2.p5212_지구온난화
 
 import java.io.BufferedReader
 import java.io.InputStreamReader

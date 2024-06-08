@@ -1,4 +1,4 @@
-package 백준.S2
+package 백준.S2.p20006_랭킹전대기열
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
