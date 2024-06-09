@@ -1,4 +1,4 @@
-package 백준.Silver.S3
+package 백준.Silver.S3.p8911_거북이
 
 import java.io.BufferedReader
 import java.io.InputStreamReader

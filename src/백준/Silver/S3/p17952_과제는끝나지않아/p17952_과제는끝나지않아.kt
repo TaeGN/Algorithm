@@ -1,4 +1,4 @@
-package 백준.Silver.S3
+package 백준.Silver.S3.p17952_과제는끝나지않아
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
