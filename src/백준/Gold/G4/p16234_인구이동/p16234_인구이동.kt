@@ -1,4 +1,4 @@
-package 백준.Gold.G4
+package 백준.Gold.G4.p16234_인구이동
 
 import java.io.BufferedReader
 import java.io.InputStreamReader

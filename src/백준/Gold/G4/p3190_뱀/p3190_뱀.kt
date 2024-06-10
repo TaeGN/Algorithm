@@ -1,4 +1,4 @@
-package 백준.Gold.G4
+package 백준.Gold.G4.p3190_뱀
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
