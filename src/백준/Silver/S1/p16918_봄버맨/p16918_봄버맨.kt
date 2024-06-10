@@ -1,4 +1,4 @@
-package 백준.Silver.S1
+package 백준.Silver.S1.p16918_봄버맨
 
 import java.io.BufferedReader
 import java.io.InputStreamReader

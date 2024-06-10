@@ -1,4 +1,4 @@
-package 백준.Silver.S1
+package 백준.Silver.S1.p30892_상어키우기
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
