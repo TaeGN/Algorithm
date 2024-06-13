@@ -1,4 +1,4 @@
-package 백준.Silver.S4
+package 백준.Silver.S4.p2578_빙고
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
