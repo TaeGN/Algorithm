@@ -1,4 +1,4 @@
-package 백준.Gold.G3
+package 백준.Gold.G3.p20057_마법사상어와토네이도
 
 import java.io.BufferedReader
 import java.io.InputStreamReader
