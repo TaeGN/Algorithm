@@ -1,62 +1,46 @@
 package 백준.Gold.G3.p2623_음악프로그램
 
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.util.StringTokenizer
+import java.io.StreamTokenizer
 
-@JvmInline
-value class Singer(val id: Int)
+fun main() = StreamTokenizer(System.`in`.bufferedReader()).run {
+    fun readInt(): Int {
+        nextToken()
+        return nval.toInt()
+    }
 
-@JvmInline
-value class Producer(val id: Int)
-
-fun main() = with(BufferedReader(InputStreamReader(System.`in`))) {
-    var st = StringTokenizer(readLine())
-    val n = st.nextToken().toInt()
-    val m = st.nextToken().toInt()
-
-    val singerSequencesByProducer = List(m) { ArrayDeque<Singer>() }
-    val producerListBySinger = List(n + 1) { mutableListOf<Producer>() }
-    repeat(m) { producerId ->
-        st = StringTokenizer(readLine())
-        val singerCount = st.nextToken().toInt()
-        val producer = Producer(producerId)
-        repeat(singerCount) {
-            val singer = Singer(st.nextToken().toInt())
-            singerSequencesByProducer[producer.id].add(singer)
-            producerListBySinger[singer.id].add(producer)
+    val N = readInt()
+    val M = readInt()
+    val sequenceList = List(N + 1) { mutableListOf<Int>() }
+    val inDegreeArr = IntArray(N + 1) { if (it == 0) Int.MIN_VALUE else 0 }
+    repeat(M) {
+        val size = readInt()
+        var prevSinger = readInt()
+        repeat(size - 1) {
+            val curSinger = readInt()
+            sequenceList[prevSinger].add(curSinger)
+            inDegreeArr[curSinger]++
+            prevSinger = curSinger
         }
     }
 
     val sb = StringBuilder()
-    fun Producer.next(): Producer = Producer((id + 1) % m)
-    fun query(producer: Producer, nothingCount: Int = 0) {
-        if (nothingCount == m) return
-        val sequence = singerSequencesByProducer[producer.id]
-        if (sequence.isEmpty()) {
-            query(producer.next(), nothingCount + 1)
-            return
+    val queue = ArrayDeque<Int>()
+    for ((singer, inDegree) in inDegreeArr.withIndex()) {
+        if (inDegree == 0) {
+            sb.appendLine(singer)
+            queue.add(singer)
         }
+    }
 
-        val singer = sequence.first()
-        val producerList = producerListBySinger[singer.id]
-        if (producerList.size == 1) {
-            sb.appendLine(singer.id)
-            sequence.removeFirst()
-            query(producer.next())
-        } else if (producerList.all { singerSequencesByProducer[it.id].first() == singer }) {
-            sb.appendLine(singer.id)
-            producerList.forEach { singerSequencesByProducer[it.id].removeFirst() }
-            query(producer.next())
-        } else {
-            for (otherProducer in producerList) {
-                if (producer == otherProducer) continue
-                query(otherProducer, nothingCount + 1)
+    while (queue.isNotEmpty()) {
+        val singer = queue.removeFirst()
+        for (nextSinger in sequenceList[singer]) {
+            if (--inDegreeArr[nextSinger] == 0) {
+                sb.appendLine(nextSinger)
+                queue.add(nextSinger)
             }
         }
     }
 
-    query(Producer(0))
-    println(if (singerSequencesByProducer.all { it.size == 0 }) sb else "0")
+    println(if (inDegreeArr.any { it > 0 }) 0 else sb)
 }
-
