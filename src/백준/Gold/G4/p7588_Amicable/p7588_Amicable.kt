@@ -1,4 +1,4 @@
-package 백준.문제푸는중.p7588_Amicable
+package 백준.Gold.G4.p7588_Amicable
 
 import java.io.StreamTokenizer
 import kotlin.math.sqrt
