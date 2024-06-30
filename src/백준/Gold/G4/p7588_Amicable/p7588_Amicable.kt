@@ -13,10 +13,8 @@ fun main() = StreamTokenizer(System.`in`.bufferedReader()).run {
     val primeList = mutableSetOf<Int>()
     val sumArr = IntArray(MAX_N + 1) { 1 }
     val maxNum = sqrt(MAX_N.toDouble()).toInt()
-//    모든 소수에서 진행
     for (num in 2..maxNum) {
         if (sumArr[num] > 1) continue
-//        소수의 거듭제곱
         for (i in 1..(maxNum / num)) {
             val numA = num * i
             if (primeList.any { i % it == 0 }) continue
