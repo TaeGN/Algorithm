@@ -1,4 +1,4 @@
-package 백준.문제푸는중.p2606_바이러스
+package 백준.Silver.S3.p2606_바이러스
 
 import java.io.StreamTokenizer
 
