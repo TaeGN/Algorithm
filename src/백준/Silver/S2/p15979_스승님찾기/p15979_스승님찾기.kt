@@ -5,10 +5,10 @@ import kotlin.math.max
 import kotlin.math.min
 
 fun main() {
-    val (M, N) = readln().split(" ").map { abs(it.toLong()) }.let { it[0] to it[1] }
-    fun gcd(a: Long, b: Long): Long {
+    val (M, N) = readln().split(" ").map { abs(it.toInt()) }.let { it[0] to it[1] }
+    fun gcd(a: Int, b: Int): Int {
         require(a >= b)
-        return if (b == 0L) a
+        return if (b == 0) a
         else gcd(b, a % b)
     }
 
