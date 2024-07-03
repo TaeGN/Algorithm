@@ -24,17 +24,4 @@ fun main() = StreamTokenizer(System.`in`.bufferedReader()).run {
             .sorted()
             .count { curCount -> M >= (totalCutCount + curCount).also { totalCutCount = it } })
         .let(::println)
-
-//    val sortedArr = arr.asSequence().filter { it % 10 == 0 }.map { it / 10 }.sorted().toList()
-//    var totalCakeCount = 0
-//    for (cakeCount in sortedArr) {
-//        if (totalCutCount + cakeCount - 1 <= M) {
-//            totalCutCount += cakeCount - 1
-//            totalCakeCount += cakeCount
-//        } else {
-//            totalCakeCount += M - totalCutCount
-//            break
-//        }
-//    }
-//    println(totalCakeCount)
 }
