@@ -29,7 +29,6 @@ fun main() = StreamTokenizer(System.`in`.bufferedReader()).run {
     fun maxCount(start: Int = 0, end: Int = min(N, M)): Int {
         val mid = (start + end) / 2
         if(start == mid) return if (isPossible(end)) end else start
-        println("$start ~ $end = ${isPossible(mid)}")
         return if (isPossible(mid)) maxCount(mid, end)
         else maxCount(start, mid - 1)
     }
