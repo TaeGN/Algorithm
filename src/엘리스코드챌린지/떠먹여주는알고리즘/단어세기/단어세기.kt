@@ -1,4 +1,4 @@
-package 앨리스코드챌린지.떠먹여주는알고리즘.단어세기
+package 엘리스코드챌린지.떠먹여주는알고리즘.단어세기
 
 fun main() {
     val N = readln().toInt()

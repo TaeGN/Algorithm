@@ -1,4 +1,4 @@
-package 앨리스코드챌린지.떠먹여주는알고리즘.소수출력
+package 엘리스코드챌린지.떠먹여주는알고리즘.소수출력
 
 import kotlin.math.max
 

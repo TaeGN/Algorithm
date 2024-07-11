@@ -1,4 +1,4 @@
-package 앨리스코드챌린지.떠먹여주는알고리즘.최대공약수와최소공배수
+package 엘리스코드챌린지.떠먹여주는알고리즘.최대공약수와최소공배수
 
 import java.util.StringTokenizer
 import kotlin.math.max
