@@ -1,4 +1,4 @@
-package 엘리스코드챌린지.떠먹여주는알고리즘.숨겨진수찾기
+package 엘리스코드챌린지.떠먹여주는알고리즘.기초수학과문자열.숨겨진수찾기
 
 fun main() {
     fun String.sum(): Long {

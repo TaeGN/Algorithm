@@ -1,4 +1,4 @@
-package 엘리스코드챌린지.떠먹여주는알고리즘.콤보데미지
+package 엘리스코드챌린지.떠먹여주는알고리즘.기초수학과문자열.콤보데미지
 
 import java.io.StreamTokenizer
 
