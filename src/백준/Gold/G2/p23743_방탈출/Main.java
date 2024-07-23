@@ -55,13 +55,14 @@ public class Main {
             pq.add(new Exit(i, nextInt()));
         }
         int minTotalTime = 0;
-        int count = 0;
         int warpCount = 0;
+        int count = 0;
         while (count < N && !pq.isEmpty()) {
             Structure structure = pq.poll();
-            if (structure instanceof Warp && ++warpCount > M) continue;
-            if (!union(structure.id1, structure.id2)) continue;
+            boolean isWarp = structure instanceof Warp;
+            if ((isWarp && warpCount >= M) || !union(structure.id1, structure.id2)) continue;
             minTotalTime += structure.time;
+            if (isWarp) warpCount++;
             count++;
         }
         System.out.println(minTotalTime);
