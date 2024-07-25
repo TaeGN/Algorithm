@@ -1,7 +1,6 @@
 package 백준.Gold.G5.p14728_벼락치기;
 
 import java.io.*;
-import java.util.*;
 
 public class Main {
     private static final StreamTokenizer st = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));
@@ -22,6 +21,6 @@ public class Main {
                 maxScoreByTimeArr[time] = Math.max(maxScoreByTimeArr[time], maxScoreByTimeArr[time - K] + S);
             }
         }
-        System.out.println(Arrays.stream(maxScoreByTimeArr).max().orElseThrow());
+        System.out.println(maxScoreByTimeArr[T]);
     }
 }
