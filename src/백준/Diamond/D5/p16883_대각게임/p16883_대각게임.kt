@@ -4,8 +4,8 @@ const val EMPTY = -1
 fun main() {
     val (N, M) = readln().trim().split(" ").map(String::toInt)
     val matrix = Array(N) { readln().trim().toCharArray() }
-    val evenMatrix = Array((N + M + 1) / 2) { CharArray((N - 1) / 2 + (M - 1) / 2 + 1) { ' ' } }
-    val oddMatrix = Array((N + M) / 2) { CharArray(N / 2 + M / 2) { ' ' } }
+    val evenMatrix = Array((N + M) / 2) { CharArray((N + M) / 2) { ' ' } }
+    val oddMatrix = Array((N + M) / 2) { CharArray((N + M) / 2) { ' ' } }
     for (r in 0 until N) {
         for (c in 0 until M) {
             if ((r + c) % 2 == 0) evenMatrix[(r + c) / 2][((c - r) + (N - 1) / 2 * 2) / 2] = matrix[r][c]
@@ -29,10 +29,10 @@ fun main() {
     fun dfs(sr: Int, sc: Int, er: Int, ec: Int, matrix: Array<CharArray>, G: Array<Array<Array<IntArray>>>): Int {
         if (sr > er || sc > ec) return 0
         if (G[sr][sc][er][ec] != EMPTY) return G[sr][sc][er][ec]
-        var flag = 0
+        var flag = 0L
         for (r in sr..er) {
             for (c in sc..ec) {
-                flag = flag or (1 shl when (matrix[r][c]) {
+                flag = flag or (1L shl when (matrix[r][c]) {
                     'L' -> dfs(sr, sc, r - 1, ec, matrix, G) xor dfs(r + 1, sc, er, ec, matrix, G)
                     'R' -> dfs(sr, sc, er, c - 1, matrix, G) xor dfs(sr, c + 1, er, ec, matrix, G)
                     'X' -> dfs(sr, sc, r - 1, c - 1, matrix, G) xor dfs(sr, c + 1, r - 1, ec, matrix, G) xor
@@ -42,8 +42,8 @@ fun main() {
                 })
             }
         }
-        for (i in 0 until 30) {
-            if ((flag and (1 shl i)) == 0) {
+        for (i in 0 until 60) {
+            if ((flag and (1L shl i)) == 0L) {
                 G[sr][sc][er][ec] = i
                 break
             }
