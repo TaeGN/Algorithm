@@ -23,8 +23,8 @@ fun main() = StreamTokenizer(System.`in`.bufferedReader()).run {
 
     fun IntArray.higher(target: Int): Int {
         val idx = binarySearch(target + 1).let { if (it >= 0) it else -(it + 1) }
-        return this[if (idx == size) higher(0)
-        else cardIdxArr.getCardIdx(idx).also { cardIdxArr[it] = it + 1 }]
+        return if (idx == size) higher(0)
+        else this[cardIdxArr.getCardIdx(idx).also { cardIdxArr[it] = (it + 1) % size }]
     }
 
     val sb = StringBuilder()
