@@ -1,44 +1,43 @@
 package 백준.Platinum.P4.p3653_영화수집
 
-import java.io.StreamTokenizer
-
-const val MAX_N = 100_000
-const val MAX_M = 100_000
-fun main() = StreamTokenizer(System.`in`.bufferedReader()).run {
-    fun readInt(): Int {
-        nextToken()
-        return nval.toInt()
+class SegTree(val N: Int) {
+    private val tree = IntArray(4 * N)
+    fun update(idx: Int, diff: Int, start: Int = 0, end: Int = N - 1, treeIdx: Int = 1) {
+        if (end < idx || idx < start) return
+        tree[treeIdx] += diff
+        if (start == end) return
+        val mid = (start + end) / 2
+        update(idx, diff, start, mid, treeIdx * 2)
+        update(idx, diff, mid + 1, end, treeIdx * 2 + 1)
     }
 
-    val tc = readInt()
-    val dvdCount = Array(MAX_N + MAX_M) { 0 }
-    val dvdIdx = Array(MAX_N + 1) { 0 }
-    val movedDvdIdx = Array(MAX_N) { 0 }
-    val sb = StringBuilder()
-    repeat(tc) {
-        val n = readInt()
-        val m = readInt()
-        var curIdx = dvdCount.size - n
-        var movedIdx = movedDvdIdx.size
-        dvdCount.fill(0, dvdCount.size - n - m, dvdCount.size - n + 1)
-        dvdCount.fill(1, dvdCount.size - n + 1)
-        for (i in 1..n) {
-            dvdIdx[i] = dvdCount.size - 1 - n + i
-        }
-        repeat(m) {
-            val num = readInt()
-            val idx = dvdIdx[num]
-            val outsideCount = movedDvdIdx.size + movedDvdIdx.binarySearch(idx, fromIndex = movedIdx) + 1
-            val totalCount = movedDvdIdx.size + movedDvdIdx.binarySearch(curIdx, fromIndex = movedIdx) + 1
-            val insideCount = totalCount - outsideCount
-            val sum = idx - curIdx - insideCount
-            sb.append("$sum ")
-            movedDvdIdx[--movedIdx] = idx
-            dvdCount[idx]--
-            dvdCount[curIdx]++
-            dvdIdx[num] = --curIdx
-        }
+    fun query(left: Int, right: Int = N - 1, start: Int = 0, end: Int = N - 1, treeIdx: Int = 1): Int {
+        if (end < left || right < start) return 0
+        if (left <= start && end <= right) return tree[treeIdx]
+        val mid = (start + end) / 2
+        return query(left, right, start, mid, treeIdx * 2) + query(left, right, mid + 1, end, treeIdx * 2 + 1)
+    }
+}
 
+fun main() {
+    val sb = StringBuilder()
+    repeat(readln().toInt()) {
+        val (N, M) = readln().trim().split(" ").map(String::toInt)
+        val segTree = SegTree(N + M)
+        val idxArr = IntArray(N + 1)
+        var idx = 0
+        for (i in N downTo 1) {
+            idxArr[i] = idx++
+            segTree.update(idxArr[i], 1)
+        }
+        for (i in readln().trim().split(" ").map(String::toInt)) {
+            val pIdx = idxArr[i]
+            val nIdx = idx++
+            idxArr[i] = nIdx
+            sb.append("${segTree.query(pIdx + 1)} ")
+            segTree.update(pIdx, -1)
+            segTree.update(nIdx, 1)
+        }
         sb.appendLine()
     }
     println(sb)
