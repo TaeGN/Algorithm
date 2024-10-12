@@ -1,4 +1,4 @@
-package AtCoder.ABC.ProblemList.Difficulty1100.ChmaxRush
+package AtCoder.ProblemList.Difficulty1100.ChmaxRush
 
 const val MOD = 998244353
 
