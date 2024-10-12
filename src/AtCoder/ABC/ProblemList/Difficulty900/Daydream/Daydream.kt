@@ -1,4 +1,4 @@
-package AtCoder.ABC.ProblemList.Difficulty800_1199.Daydream
+package AtCoder.ABC.ProblemList.Difficulty900.Daydream
 
 fun main() {
     val S = readln()
