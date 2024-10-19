@@ -1,4 +1,4 @@
-package AtCoder.ProblemList.Difficulty1000.PopcountAndXOR
+package AtCoder.ProblemList.Difficulty800_1199.PopcountAndXOR
 
 fun main() {
     var (a, b, C) = readln().trim().split(" ").let { Triple(it[0].toInt(), it[1].toInt(), it[2].toLong()) }

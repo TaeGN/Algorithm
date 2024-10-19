@@ -1,4 +1,4 @@
-package AtCoder.ProblemList.Difficulty1300.Appraiser
+package AtCoder.ProblemList.Difficulty1200_1599.Appraiser
 
 fun main() {
     val (N, M, Q) = readln().trim().split(" ").map(String::toInt)

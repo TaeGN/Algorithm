@@ -1,4 +1,4 @@
-package AtCoder.ProblemList.Difficulty1000.Routing
+package AtCoder.ProblemList.Difficulty800_1199.Routing
 
 val dr = intArrayOf(1, -1, 0, 0)
 val dc = intArrayOf(0, 0, 1, -1)

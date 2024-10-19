@@ -1,4 +1,4 @@
-package AtCoder.ProblemList.Difficulty1100.SetAddQuery
+package AtCoder.ProblemList.Difficulty800_1199.SetAddQuery
 
 const val EMPTY = -1
 fun main() {

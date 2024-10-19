@@ -1,4 +1,4 @@
-package AtCoder.ProblemList.Difficulty1300.plus1AndMinus1
+package AtCoder.ProblemList.Difficulty1200_1599.plus1AndMinus1
 
 fun main() {
     val sb = StringBuilder()

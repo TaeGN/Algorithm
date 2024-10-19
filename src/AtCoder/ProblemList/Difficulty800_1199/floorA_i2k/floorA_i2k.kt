@@ -1,4 +1,4 @@
-package AtCoder.ProblemList.Difficulty1000.floorA_i2k
+package AtCoder.ProblemList.Difficulty800_1199.floorA_i2k
 
 fun main() {
     val sb = StringBuilder()

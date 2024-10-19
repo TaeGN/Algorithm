@@ -1,4 +1,4 @@
-package AtCoder.ProblemList.Difficulty900.IdealHolidays
+package AtCoder.ProblemList.Difficulty800_1199.IdealHolidays
 
 import java.util.TreeSet
 

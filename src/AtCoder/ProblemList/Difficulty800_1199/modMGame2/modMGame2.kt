@@ -1,4 +1,4 @@
-package AtCoder.ProblemList.Difficulty1000.modMGame2
+package AtCoder.ProblemList.Difficulty800_1199.modMGame2
 
 
 fun main() {
