@@ -1,4 +1,4 @@
-package AtCoder.ProblemList.Substring
+package AtCoder.ProblemList.Difficulty0_399.Substring
 
 fun main() {
     val S = readln().trim()
